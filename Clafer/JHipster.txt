@@ -1,0 +1,210 @@
+// File name: JHipster.xml
+// (Copyright) Author: Daniel-Jesus Munoz
+// Date created: 12/06/2022
+// Version: ClaferMoo + Java JDK 18.0.2
+// Description: Software generator SPL modelled in Clafer Language
+
+abstract QAs
+    battery -> integer
+    usability -> integer
+    footprint -> integer
+    compileable -> integer
+
+abstract JHipster
+ xor Generator
+  xor Server
+   MicroserviceApplication : QAs
+            [ battery = 20]
+            [ usability = 1 ]
+			[ footprint = 3]
+            [ compileable = 1 ]
+   UaaServer : QAs
+            [ battery = 19]
+            [ usability = 2 ]
+			[ footprint = 6]
+            [ compileable = 1 ]
+  xor Application
+   MicroserviceGateway : QAs
+            [ battery = 18]
+            [ usability = 3 ]
+			[ footprint = 9]
+            [ compileable = 0 ]
+   Monolithic : QAs
+            [ battery = 17]
+            [ usability = 4 ]
+			[ footprint = 3]
+            [ compileable = 1 ]
+ SocialLogin : QAs ?
+            [ battery = 16]
+            [ usability = 5 ]
+			[ footprint = 6]
+            [ compileable = 1 ]
+ SpringWebSockets : QAs ?
+            [ battery = 15]
+            [ usability = 6 ]
+			[ footprint = 9]
+            [ compileable = 0 ]
+ or Authentication
+  HTTPSession : QAs
+            [ battery = 14]
+            [ usability = 5 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+  OAuth2 : QAs
+            [ battery = 13]
+            [ usability = 8 ]
+			[ footprint = 6]
+            [ compileable = 1 ]
+  Uaa : QAs
+            [ battery = 12]
+            [ usability = 9 ]
+			[ footprint = 9]
+            [ compileable = 0 ]
+  JWT : QAs
+            [ battery = 11]
+            [ usability = 10 ]
+			[ footprint = 3]
+            [ compileable = 1 ]
+ Libass  : QAs ?
+            [ battery = 10]
+            [ usability = 2 ]
+			[ footprint = 6]
+            [ compileable = 1 ]
+ ClusteredSession : QAs ?
+            [ battery = 9]
+            [ usability = 4 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+ xor Database
+  xor SQL
+   xor Hibernate2ndLvlCache
+    HazelCast : QAs
+            [ battery = 8]
+            [ usability = 6 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+    EhCache : QAs
+            [ battery = 7]
+            [ usability = 8 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+   xor Development
+    xor H2
+     DiskBased : QAs
+            [ battery = 6]
+            [ usability = 10 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+     InMemory : QAs
+            [ battery = 5]
+            [ usability = 3 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+    PostgreSQLDev : QAs
+            [ battery = 4]
+            [ usability = 5 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+    MariDBDev : QAs
+            [ battery = 3]
+            [ usability = 7 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+    MySql : QAs
+            [ battery = 2]
+            [ usability = 9 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+   ElasticSearch : QAs
+            [ battery = 1]
+            [ usability = 1 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+   xor Production
+    MySQL : QAs
+            [ battery = 20]
+            [ usability = 1 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+    MariaDB : QAs
+            [ battery = 15]
+            [ usability = 5 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+    PostgreSQL : QAs
+            [ battery = 5]
+            [ usability = 6 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+  Cassandra : QAs
+            [ battery = 1]
+            [ usability = 7 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+  MongoDB : QAs
+            [ battery = 5]
+            [ usability = 3 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+ Docker : QAs ?
+            [ battery = 15]
+            [ usability = 4 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+ xor BackEnd
+  Gradle : QAs
+            [ battery = 20]
+            [ usability = 2 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+  Maven : QAs
+            [ battery = 1]
+            [ usability = 4 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+ InternationalizationSupport : QAs ?
+            [ battery = 10]
+            [ usability = 6 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+ TestingFramework
+  Protactor : QAs ?
+            [ battery = 4]
+            [ usability = 5 ]
+			[ footprint = 9 ]
+            [ compileable = 0 ]
+  Gatling : QAs
+            [ battery = 7]
+            [ usability = 1 ]
+			[ footprint = 3 ]
+            [ compileable = 1 ]
+  Cucumber : QAs
+            [ battery = 13]
+            [ usability = 5 ]
+			[ footprint = 6 ]
+            [ compileable = 1 ]
+ total_battery -> integer = sum QAs.battery
+ total_usability -> integer = sum QAs.usability
+ total_footprint -> integer = sum QAs.footprint
+ total_compileable -> integer = sum QAs.compileable	
+
+RES : JHipster
+//Cross-tree constraints
+[(OAuth1 && not SocialLogin && not MicroserviceApplication) => (SQL || MongoDB)]
+[SocialLogin => ((HTTPSession || JWT SQL) && Monolithic && (SQL || MongoDB))]
+[(not OAuth1 && not SocialLogin && not MicroserviceApplication) => (SQL || MongoDB || Cassandra)]
+[(SpringWebSockets && ClusteredSession) => Application]
+[(MicroserviceApplication || ClusteredSession) => (JWT && Uaa)]
+[Monolithic => (JWT || HTTPSession || OAuth2)]
+[PostgreSQL => (H2 || PostgreSQLDev)]
+[Server => not Protactor]
+[not Server => Protactor]
+[MySQL => (H2 || MySql)]
+[Libass => Application]
+[MariaDB => (H2 || MariDBDev)]
+[UaaServer => Uaa]
+
+<< min RES.total_battery >>
+<< max RES.total_usability >>
+<< min RES.total_footprint >>
+<< max RES.total_compileable >>

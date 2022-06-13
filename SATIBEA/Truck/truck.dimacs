@@ -1,0 +1,110 @@
+c File name: truck.dimacs
+c (Copyright) Author: Daniel-Jesus Munoz
+c Date created: 12/06/2022
+c Version: SATIBEA + JAVA JDK 18.0.2
+c Description: Truck factory SPL modelled in XML
+c 1 KW400
+c 2 Flatbed
+c 3 Lightweight
+c 4 Tons23
+c 5 Axles3
+c 6 Axles4
+c 7 Count
+c 8 HighRoof
+c 9 Cabin
+c 10 Axles2
+c 11 DrivenAxles3
+c 12 DrivenAxles2
+c 13 Engine
+c 14 Tons18
+c 15 Semitrailer
+c 16 Tons12
+c 17 SleeperCabin
+c 18 Truck
+c 19 Dumper
+c 20 Tank
+c 21 Weight
+c 22 Bed1
+c 23 Axles
+c 24 Type
+c 25 KW160
+c 26 KW280
+c 27 Heavyweight
+c 28 Drivetrain
+c 29 Tons40
+c 30 AdditionalSteeringAxle
+c 31 DrivenAxle1
+c 32 MultipleRearAxles
+p cnf 32 72
+18 0
+2 -19 0
+19 -2 0
+3 -16 0
+3 -14 0
+16 14 -3 0
+-16 -14 0
+7 -10 0
+7 -32 0
+10 32 -7 0
+-10 -32 0
+9 -8 0
+9 -17 0
+13 -25 0
+13 -26 0
+13 -1 0
+25 26 1 -13 0
+-25 -26 0
+-25 -1 0
+-26 -1 0
+17 -22 0
+22 -17 0
+18 -21 0
+18 -24 0
+18 -13 0
+18 -9 0
+18 -23 0
+21 -18 0
+24 -18 0
+13 -18 0
+9 -18 0
+23 -18 0
+21 -3 0
+21 -27 0
+3 27 -21 0
+-3 -27 0
+23 -7 0
+23 -30 0
+23 -28 0
+7 -23 0
+28 -23 0
+24 -15 0
+24 -20 0
+24 -2 0
+15 20 2 -24 0
+-15 -20 0
+-15 -2 0
+-20 -2 0
+27 -4 0
+27 -29 0
+4 29 -27 0
+-4 -29 0
+28 -31 0
+28 -12 0
+28 -11 0
+31 12 11 -28 0
+-31 -12 0
+-31 -11 0
+-12 -11 0
+32 -5 0
+32 -6 0
+5 6 -32 0
+-5 -6 0
+-12 32 0
+-11 6 0
+-29 1 0
+-30 6 0
+-8 27 0
+-15 14 0
+-17 -2 0
+-17 -20 0
+-20 1 0

@@ -1,0 +1,40 @@
+c File name: pizzas.dimacs
+c (Copyright) Author: Daniel-Jesus Munoz
+c Date created: 12/06/2022
+c Version: SATIBEA + JAVA JDK 18.0.2
+c Description: Italian vendor system SPL modelled in XML
+c 1 Big
+c 2 Neapolitan
+c 3 Size
+c 4 Mozzarella
+c 5 Normal
+c 6 CheesyCrust
+c 7 Pizza
+c 8 Topping
+c 9 Salami
+c 10 Ham
+c 11 Dough
+c 12 Sicilian
+p cnf 12 22
+7 0
+3 -5 0
+3 -1 0
+5 1 -3 0
+-5 -1 0
+7 -8 0
+7 -3 0
+7 -11 0
+7 -6 0
+8 -7 0
+3 -7 0
+11 -7 0
+8 -9 0
+8 -10 0
+8 -4 0
+9 10 4 -8 0
+11 -2 0
+11 -12 0
+2 12 -11 0
+-2 -12 0
+-2 -9 0
+-2 -10 0

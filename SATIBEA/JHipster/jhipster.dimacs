@@ -1,0 +1,144 @@
+c File name: jhipster.dimacs
+c (Copyright) Author: Daniel-Jesus Munoz
+c Date created: 12/06/2022
+c Version: SATIBEA + JAVA JDK 18.0.2
+c Description: Software generator SPL modelled in XML
+c 1 Maven
+c 2 Hibernate2ndLvlCache
+c 3 Server
+c 4 PostgreSQL
+c 5 ElasticSearch
+c 6 Docker
+c 7 MySql
+c 8 Production
+c 9 MySQL
+c 10 Database
+c 11 Development
+c 12 EhCache
+c 13 JWT
+c 14 HTTPSession
+c 15 PostgreeSQLDev
+c 16 DiskBased
+c 17 SQL
+c 18 Libsass
+c 19 Uaa
+c 20 MicroserviceApplication
+c 21 TestingFrameworks
+c 22 MongoDB
+c 23 Application
+c 24 MariaDBDev
+c 25 Cucumber
+c 26 ClusteredSession
+c 27 Generator
+c 28 Gatling
+c 29 Cassandra
+c 30 BackEnd
+c 31 JHipster
+c 32 OAuth2
+c 33 MicroserviceGateway
+c 34 SocialLogin
+c 35 InternationalizationSupport
+c 36 MariaDB
+c 37 H2
+c 38 InMemory
+c 39 Monolithic
+c 40 HazelCast
+c 41 UaaServer
+c 42 Authentication
+c 43 SpringWebSockets
+c 44 Protractor
+c 45 Gradle
+p cnf 45 93
+31 0
+2 -40 0
+2 -12 0
+40 12 -2 0
+-40 -12 0
+3 -20 0
+3 -41 0
+20 41 -3 0
+-20 -41 0
+8 -9 0
+8 -36 0
+8 -4 0
+9 36 4 -8 0
+-9 -36 0
+-9 -4 0
+-36 -4 0
+10 -17 0
+10 -29 0
+10 -22 0
+17 29 22 -10 0
+-17 -29 0
+-17 -22 0
+-29 -22 0
+11 -37 0
+11 -15 0
+11 -24 0
+11 -7 0
+37 15 24 7 -11 0
+-37 -15 0
+-37 -24 0
+-37 -7 0
+-15 -24 0
+-15 -7 0
+-24 -7 0
+17 -2 0
+17 -11 0
+17 -8 0
+17 -5 0
+11 -17 0
+8 -17 0
+21 -44 0
+21 -28 0
+21 -25 0
+28 -21 0
+25 -21 0
+23 -33 0
+23 -39 0
+33 39 -23 0
+-33 -39 0
+27 -3 0
+27 -23 0
+3 23 -27 0
+-3 -23 0
+30 -45 0
+30 -1 0
+45 1 -30 0
+-45 -1 0
+31 -27 0
+31 -42 0
+31 -34 0
+31 -10 0
+31 -43 0
+31 -18 0
+31 -26 0
+31 -30 0
+31 -35 0
+31 -6 0
+31 -21 0
+27 -31 0
+42 -31 0
+30 -31 0
+21 -31 0
+37 -16 0
+37 -38 0
+16 38 -37 0
+-16 -38 0
+42 -14 0
+42 -32 0
+42 -19 0
+42 -13 0
+14 32 19 13 -42 0
+-14 -32 0
+-14 -19 0
+-14 -13 0
+-32 -19 0
+-32 -13 0
+-19 -13 0
+-34 39 0
+-41 19 0
+-3 -44 0
+23 -43 0
+23 -26 0
+-18 23 0

@@ -1,0 +1,99 @@
+// File name: VNSFull.txt
+// (Copyright) Author: Daniel-Jesus Munoz
+// Date created: 12/06/2022
+// Version: ClaferMoo + Java JDK 18.0.2
+// Description: Virtual Network System SPL modelled in Clafer Language
+
+abstract QAs
+    extensibility -> integer
+    usability -> integer
+    security -> integer
+    time -> integer
+	energy -> integer
+
+abstract VNS
+ xor Manager
+  xor OpenSourceMANO
+   Azure : QAs
+            [ extensibility = 3]
+            [ usability = 5 ]
+			[ security = 3]
+            [ time = 10 ]
+            [ energy = 10 ]
+   OpenVIM : QAs
+            [ extensibility = 2]
+            [ usability = 8 ]
+			[ security = 3]
+            [ time = 1 ]
+            [ energy = 1 ]
+   OpenStack : QAs
+            [ extensibility = 2]
+            [ usability = 7 ]
+			[ security = 3]
+            [ time = 50 ]
+            [ energy = 50 ]
+   AWS : QAs
+            [ extensibility = 3]
+            [ usability = 6 ]
+			[ security = 3]
+            [ time = 100 ]
+            [ energy = 1 ]
+  xor OPNFVJerma
+   Main : QAs
+            [ extensibility = 1]
+            [ usability = 8 ]
+			[ security = 3]
+            [ time = 1 ]
+            [ energy = 100 ]
+   Testnet : QAs
+            [ extensibility = 3]
+            [ usability = 8 ]
+			[ security = 1]
+            [ time = 25 ]
+            [ energy = 75 ]
+  ONAPIstanbul -> integer : QAs
+            [ extensibility = 3]
+            [ usability = 7 ]
+			[ security = 2]
+            [ time = 75 ]
+            [ energy = 25 ]
+  [ONAPIstanbul => (ONAPIstanbul = 1 || ONAPIstanbul = 2 || ONAPIstanbul = 3)]
+ xor Kubernetes ?
+  HyperV : QAs
+            [ extensibility = 2]
+            [ usability = 6 ]
+			[ security = 3]
+            [ time = 12 ]
+            [ energy = 46 ]
+  Vanilla : QAs
+            [ extensibility = 3]
+            [ usability = 2 ]
+			[ security = 2]
+            [ time = 73 ]
+            [ energy = 17 ]
+  Docker : QAs
+            [ extensibility = 1]
+            [ usability = 7 ]
+			[ security = 3]
+            [ time = 21]
+            [ energy = 87 ]
+ xor VNFs
+  Monitor
+  Firewall
+  Gateway
+ total_extensibility -> integer = sum QAs.extensibility
+ total_usability -> integer = sum QAs.usability
+ total_security -> integer = sum QAs.security
+ total_time -> integer = sum QAs.time	
+ total_energy -> integer = sum QAs.energy
+ 
+RES : VNS
+//Cross-tree constraints
+[(OpenSourceMANO || OPNFVJerma) => Kubernetes]
+[ONAPIstanbul => not Kubernetes]
+
+<< max RES.total_extensibility >>
+<< max RES.total_usability >>
+<< max RES.total_security >>
+<< min RES.total_time >>
+<< min RES.total_energy >>

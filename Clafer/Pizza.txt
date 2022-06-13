@@ -1,0 +1,47 @@
+// File name: Pizza.txt
+// (Copyright) Author: Daniel-Jesus Munoz
+// Date created: 12/06/2022
+// Version: ClaferMoo + Java JDK 18.0.2
+// Description: Italian vendor machine SPL modelled in Clafer Language
+
+abstract QAs
+    cost -> integer
+    time -> integer
+
+abstract Pizza
+ or Topping
+   Salami : QAs
+            [ cost = 5]
+            [ time = 10 ]
+   Ham : QAs
+            [ cost = 6]
+            [ time = 100 ]
+   Mozzarella : QAs
+            [ cost = 7]
+            [ time = 1 ]
+ xor Size
+   Normal : QAs
+            [ cost = 8]
+            [ time = 20 ]
+   Big : QAs
+            [ cost = 9]
+            [ time = 2 ]
+ xor Dough
+   Neapolitan : QAs
+            [ cost = 15]
+            [ time = 50 ]
+   Sicilian : QAs
+            [ cost = 20]
+            [ time = 100 ]
+ xor CheesyCrust : QAs ?
+            [ cost = 25]
+            [ time = 10 ]
+ total_cost -> integer = sum QAs.cost
+ total_time -> integer = sum QAs.time			
+
+RES : Pizza
+//Cross-tree constraints
+[CheesyCrust => Big]
+
+<< min RES.total_cost >>
+<< min RES.total_time >>

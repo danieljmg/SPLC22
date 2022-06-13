@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+File name: Pizza.xml
+(Copyright) Author: Daniel-Jesus Munoz
+Date created: 12/06/2022
+Version: AAFM Python Framwork 6/2022 + Python 3.9.13
+Description: Italian vendor system SPL modelled in XML
+-->
+<featureModel>
+	<struct>
+		<and abstract="true" mandatory="true" name="Pizza">
+			<or mandatory="true" name="Topping">
+				<feature name="Salami"/>
+				<feature name="Ham"/>
+				<feature name="Mozzarella"/>
+			</or>
+			<alt mandatory="true" name="Size">
+				<feature name="Normal"/>
+				<feature name="Big"/>
+			</alt>
+			<alt mandatory="true" name="Dough">
+				<feature name="Neapolitan"/>
+				<feature name="Sicilian"/>
+			</alt>
+			<feature name="CheesyCrust"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>CheesyCrust</var>
+				<var>Big</var>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

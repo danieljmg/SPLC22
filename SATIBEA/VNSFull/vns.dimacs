@@ -1,0 +1,81 @@
+c File name: vns.dimacs
+c (Copyright) Author: Daniel-Jesus Munoz
+c Date created: 12/06/2022
+c Version: SATIBEA + JAVA JDK 18.0.2
+c Description: Full Virtual Network System SPL modelled in XML
+c 1 VNS
+c 2 Docker
+c 3 Gateway
+c 4 Azure
+c 5 OpenVIM
+c 6 VNFs
+c 7 OpenStack
+c 8 ONAPIstanbul_2
+c 9 ONAPIstanbul
+c 10 Monitor
+c 11 OpenSourceMANO
+c 12 VNS
+c 13 ONAPIstanbul_3
+c 14 Main
+c 15 Kubernetes
+c 16 AWS
+c 17 HyperV
+c 18 Testnet
+c 19 OPNFVJerma
+c 20 Firewall
+c 21 Vanilla
+c 22 Manager
+c 23 ONAPIstanbul_3
+p cnf 23 52
+12 0
+1 -19 0
+1 -11 0
+19 11 -1 0
+-19 -11 0
+6 -10 0
+6 -20 0
+6 -3 0
+10 20 3 -6 0
+-10 -20 0
+-10 -3 0
+-20 -3 0
+9 -8 0
+9 -23 0
+9 -13 0
+8 23 13 -9 0
+-8 -23 0
+-8 -13 0
+-23 -13 0
+11 -14 0
+11 -18 0
+14 18 -11 0
+-14 -18 0
+12 -22 0
+12 -15 0
+12 -6 0
+22 -12 0
+6 -12 0
+15 -17 0
+15 -21 0
+15 -2 0
+17 21 2 -15 0
+-17 -21 0
+-17 -2 0
+-21 -2 0
+19 -4 0
+19 -5 0
+19 -7 0
+19 -16 0
+4 5 7 16 -19 0
+-4 -5 0
+-4 -7 0
+-4 -16 0
+-5 -7 0
+-5 -16 0
+-7 -16 0
+22 -9 0
+22 -1 0
+9 1 -22 0
+-9 -1 0
+-1 15 0
+-9 -15 0
