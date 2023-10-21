@@ -1,8 +1,8 @@
-# SPLC'22 Submission 79
+# SPLC'22 Quality-aware Analysis and Optimisation of Virtual Network Functions
 
 DATA: Quality-aware Analysis and Optimisation of Virtual Network Functions
 
-This repository contains the models, operations and results empirically used in the SPLC'22 Submission 79.
+This repository contains the models, operations and results empirically used in [Quality-aware Analysis and Optimisation of Virtual Network Functions](https://doi.org/10.1145/3546932.3547007) at SPLC 2022.
 Due to copyright issues, it does not contain the tools (i.e., automated reasoners), although their official sites are provided.
 
 It is licensed under the [MIT license](https://github.com/danieljmg/SPLC22/blob/main/LICENSE).
